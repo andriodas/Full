@@ -5,10 +5,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "productlines")
-
+@Getter @Setter @NoArgsConstructor @ToString
 public class ProductLine {
     @Id
     @Column(name = "productline")
@@ -18,37 +22,5 @@ public class ProductLine {
     @Column(name = "htmldescription")
     private String htmldescription;
 
-    public String getProductLine() {
-        return productLine;
-    }
-
-    public void setProductLine(String productLine) {
-        this.productLine = productLine;
-    }
-
-    public String getTextDescription() {
-        return textdescription;
-    }
-
-    public void setTextDescription(String textDescription) {
-        this.textdescription = textDescription;
-    }
-
-    public String getHtmlDescription() {
-        return htmldescription;
-    }
-
-    public void setHtmlDescription(String htmlDescription) {
-        this.htmldescription = htmlDescription;
-    }
-
-    @Override
-    public String toString() {
-        return "ProductLine{" +
-                "productLine='" + productLine + '\'' +
-                ", textDescription='" + textdescription + '\'' +
-                ", htmlDescription='" + htmldescription + '\'' +
-                '}';
-    }
 }
 

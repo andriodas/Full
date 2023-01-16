@@ -5,9 +5,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "customers")
+@Getter @Setter @NoArgsConstructor @ToString
 public class Customer {
 
     @Id
@@ -143,22 +148,22 @@ public class Customer {
         this.creditLimit = creditLimit;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "customerNumber=" + customerNumber +
-                ", customerName='" + customerName + '\'' +
-                ", contactLastName='" + contactLastName + '\'' +
-                ", contactFirstName='" + contactFirstName + '\'' +
-                ", phone='" + phone + '\'' +
-                ", addressLine1='" + addressLine1 + '\'' +
-                ", addressLine2='" + addressLine2 + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", postalCode='" + postalCode + '\'' +
-                ", country='" + country + '\'' +
-                ", salesRepEmployeeNumber=" + salesRepEmployeeNumber +
-                ", creditLimit=" + creditLimit +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Customer{" +
+//                "customerNumber=" + customerNumber +
+//                ", customerName='" + customerName + '\'' +
+//                ", contactLastName='" + contactLastName + '\'' +
+//                ", contactFirstName='" + contactFirstName + '\'' +
+//                ", phone='" + phone + '\'' +
+//                ", addressLine1='" + addressLine1 + '\'' +
+//                ", addressLine2='" + addressLine2 + '\'' +
+//                ", city='" + city + '\'' +
+//                ", state='" + state + '\'' +
+//                ", postalCode='" + postalCode + '\'' +
+//                ", country='" + country + '\'' +
+//                ", salesRepEmployeeNumber=" + salesRepEmployeeNumber +
+//                ", creditLimit=" + creditLimit +
+//                '}';
+//    }
 }
