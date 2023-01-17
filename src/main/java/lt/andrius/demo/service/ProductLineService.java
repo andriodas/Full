@@ -15,11 +15,16 @@ public class ProductLineService {
 
     public List<ProductLine> getAllProducts(){
         return (List<ProductLine>) productLineRepository.findAll();
-
     }
 
     public ProductLine getProductById(String id){
         return productLineRepository.findById(id).get();
+    }
+    public ProductLine getMyProductById(String id){
+        return productLineRepository.findByProductLine(id).get();
+    }
+    public List<ProductLine> getMyProductLineLike(String text){
+        return (List<ProductLine>) productLineRepository.findByProductLineLike(text);
     }
 }
 

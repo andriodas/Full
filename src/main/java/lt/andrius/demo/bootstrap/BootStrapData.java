@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BootStrapData implements CommandLineRunner {
-@Autowired
+    @Autowired
     private CustomerRepository customerRepository;
-@Autowired
+    @Autowired
     private ProductLineRepository productLineRepository;
 
 
