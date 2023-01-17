@@ -1,9 +1,12 @@
 package lt.andrius.demo.controller;
 
+import lt.andrius.demo.repository.model.Customer;
 import lt.andrius.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller //https://localhost:8080/
@@ -17,5 +20,16 @@ public class CustomerTemplateController {
     public String getTestPage() {
         return "test_page";
     }
-}
 
+    //   http://localhost:8080/customertemplate/firstpage/curtomer/112
+    @GetMapping(path = "/firstpage/curtomer/{id}")
+    public String getCustomerWithFirstPage(Model model, @PathVariable int id) {
+        Customer customer = customerService.getMyCustomerById(id);
+        model.addAttribute("company_name", customer.getCustomerName());
+        model.addAttribute("contact_first_name", customer.getContactFirstName());
+        model.addAttribute("contact_last_name", customer.getContactLastName());
+        model.addAttribute("country", customer.getCountry());
+        return "firstpage";
+
+    }
+}
