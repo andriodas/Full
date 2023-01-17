@@ -19,7 +19,7 @@ public class CustomerController {
     public @ResponseBody String getTestPage() {
         return "This is some test from SPRING";
     }
-
+   // https://localhost:8080/customermapping/customer/all
     @GetMapping(path = "/customer/all")
     public @ResponseBody List<Customer> getAllCustomers() {
         return customerService.getAllCustomers();
