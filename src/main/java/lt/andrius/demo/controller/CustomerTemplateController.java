@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -51,5 +52,13 @@ public class CustomerTemplateController {
         model.addAttribute("key_customer", customer);
 
         return "/customer/customer_th";
+    }
+
+    //   http://localhost:8080/customertemplate/customers/all
+    @GetMapping(path = "/customers/all")
+    public String getAllCustomersWithNewTemplate(Model model) {
+        List<Customer> customerList = customerService.getAllCustomers();
+        model.addAttribute("key_customers_list", customerList);
+        return "/customer/customers_th";
     }
 }
